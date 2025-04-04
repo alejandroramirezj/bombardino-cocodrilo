@@ -12,14 +12,14 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-yellow-400/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-indigo-950/80 backdrop-blur-md border-b border-amber-400/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.a
             href="#home"
-            className="text-2xl font-black text-yellow-400 hover:text-yellow-300 transition-colors"
+            className="text-2xl font-black text-amber-400 hover:text-amber-300 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -32,7 +32,7 @@ export default function Navbar() {
               <motion.a
                 key={link.href}
                 href={link.href}
-                className="text-yellow-100 hover:text-yellow-400 transition-colors font-bold"
+                className="text-violet-100 hover:text-amber-400 transition-colors font-bold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -46,7 +46,7 @@ export default function Navbar() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-yellow-400 hover:text-yellow-300 transition-colors"
+              className="text-amber-400 hover:text-amber-300 transition-colors"
             >
               <svg
                 className="h-6 w-6"

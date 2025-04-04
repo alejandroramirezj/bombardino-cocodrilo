@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="bg-black/80 border-t border-yellow-400/20 py-12">
+    <footer className="bg-indigo-950/80 border-t border-amber-400/20 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo y descripción */}
@@ -10,11 +10,11 @@ export default function Footer() {
             <motion.h3
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="text-2xl font-black text-yellow-400 mb-4"
+              className="text-2xl font-black text-amber-400 mb-4"
             >
               BOMBARDINO COCODRILO
             </motion.h3>
-            <p className="text-yellow-100/80">
+            <p className="text-violet-100/80">
               Il leggendario rettile volante che ha conquistato i cieli italiani. 
               Colleziona tutte le carte e scopri la sua incredibile storia!
             </p>
@@ -22,13 +22,13 @@ export default function Footer() {
 
           {/* Links rápidos */}
           <div>
-            <h4 className="text-lg font-bold text-yellow-400 mb-4">Links Rapidi</h4>
+            <h4 className="text-lg font-bold text-amber-400 mb-4">Links Rapidi</h4>
             <ul className="space-y-2">
               {['Home', 'Storia', 'Collezione', 'Negozio'].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="text-yellow-100/80 hover:text-yellow-400 transition-colors"
+                    className="text-violet-100/80 hover:text-amber-400 transition-colors"
                   >
                     {item}
                   </a>
@@ -39,8 +39,8 @@ export default function Footer() {
 
           {/* Contacto */}
           <div>
-            <h4 className="text-lg font-bold text-yellow-400 mb-4">Contatto</h4>
-            <ul className="space-y-2 text-yellow-100/80">
+            <h4 className="text-lg font-bold text-amber-400 mb-4">Contatto</h4>
+            <ul className="space-y-2 text-violet-100/80">
               <li>Email: info@bombardino.it</li>
               <li>Tel: +39 123 456 789</li>
               <li>
@@ -49,7 +49,7 @@ export default function Footer() {
                     <a
                       key={social}
                       href={`#${social}`}
-                      className="text-yellow-400 hover:text-yellow-300 transition-colors"
+                      className="text-amber-400 hover:text-amber-300 transition-colors"
                     >
                       <span className="sr-only">{social}</span>
                       <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -64,12 +64,12 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-yellow-400/10 text-center text-yellow-100/60">
+        <div className="mt-12 pt-8 border-t border-amber-400/10 text-center text-violet-100/60">
           <p>© 2024 Bombardino Cocodrilo. Tutti i diritti riservati.</p>
           <p className="mt-2">
-            <a href="#privacy" className="hover:text-yellow-400 transition-colors">Privacy</a>
+            <a href="#privacy" className="hover:text-amber-400 transition-colors">Privacy</a>
             {' · '}
-            <a href="#terms" className="hover:text-yellow-400 transition-colors">Termini e Condizioni</a>
+            <a href="#terms" className="hover:text-amber-400 transition-colors">Termini e Condizioni</a>
           </p>
         </div>
       </div>
