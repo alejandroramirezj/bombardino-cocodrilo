@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Navbar() {
   const links = [
-    { href: '#home', label: 'Home' },
-    { href: '#storia', label: 'Storia' },
-    { href: '#collezione', label: 'Collezione' },
-    { href: '#negozio', label: 'Negozio' }
+    { href: '/#home', label: 'Home' },
+    { href: '/#storia', label: 'Storia' },
+    { href: '/#collezione', label: 'Collezione' },
+    { href: '/#negozio', label: 'Negozio' }
   ];
 
   return (
@@ -17,27 +18,30 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.a
-            href="#home"
-            className="text-2xl font-black text-amber-400 hover:text-amber-300 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            BC
-          </motion.a>
+          <Link href="/" className="text-2xl font-black text-amber-400 hover:text-amber-300 transition-colors">
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              BC
+            </motion.span>
+          </Link>
 
           {/* Links de navegación */}
           <div className="hidden md:flex space-x-8">
             {links.map((link) => (
-              <motion.a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-violet-100 hover:text-amber-400 transition-colors font-bold"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
-                {link.label}
-              </motion.a>
+                <motion.span
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {link.label}
+                </motion.span>
+              </Link>
             ))}
           </div>
 
