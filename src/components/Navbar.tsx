@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   const links = [
-    { href: '/#home', label: 'Home' },
+    { href: '/', label: 'Home' },
     { href: '/#storia', label: 'Storia' },
     { href: '/#collezione', label: 'Collezione' },
     { href: '/#negozio', label: 'Negozio' }
