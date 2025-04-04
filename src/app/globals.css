@@ -38,7 +38,7 @@ body {
 .rays-bg {
   background-image: repeating-conic-gradient(
     from 0deg,
-    rgba(255, 0, 0, 0) 0deg 10deg,
+    rgba(255, 255, 0, 0) 0deg 10deg,
     rgba(255, 255, 0, 0.1) 10deg 20deg
   );
   animation: rotate 60s linear infinite;
@@ -115,8 +115,15 @@ body {
 .retro-text {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  -webkit-text-stroke: 2px #000;
-  paint-order: stroke fill;
+  text-shadow: 
+    4px 4px 0px #000,
+    -4px -4px 0px #000,
+    4px -4px 0px #000,
+    -4px 4px 0px #000,
+    0px 4px 0px #000,
+    4px 0px 0px #000,
+    0px -4px 0px #000,
+    -4px 0px 0px #000;
 }
 
 /* Efecto de perspectiva */
@@ -147,24 +154,24 @@ body {
   pointer-events: none;
 }
 
-/* Efecto de explosión mejorado */
+/* Efecto de explosión */
 @keyframes explode {
   0% {
-    transform: scale(0);
+    transform: scale(0.8);
     opacity: 0;
   }
   50% {
-    transform: scale(1.5);
-    opacity: 0.8;
+    transform: scale(1.2);
+    opacity: 1;
   }
   100% {
-    transform: scale(0);
-    opacity: 0;
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-.explode {
-  animation: explode 0.5s ease-out forwards;
+.explode-in {
+  animation: explode 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
 }
 
 /* Efecto de rugido mejorado */
@@ -206,4 +213,22 @@ body {
 .animate-holographic {
   animation: holographic 3s ease infinite;
   background-size: 200% 200%;
+}
+
+/* Efecto de brillo */
+.glow {
+  filter: drop-shadow(0 0 10px rgba(234, 179, 8, 0.5))
+         drop-shadow(0 0 20px rgba(234, 179, 8, 0.3));
+}
+
+/* Efecto de hover para las cartas */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.2),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }

@@ -1,8 +1,7 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import gsap from 'gsap';
 import Card from '@/components/Card';
 import Cart from '@/components/Cart';
 
@@ -41,17 +40,7 @@ const cards = [
 export default function Home() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  useEffect(() => {
-    gsap.from('.title-animation', {
-      duration: 1.5,
-      y: 100,
-      opacity: 0,
-      stagger: 0.2,
-      ease: 'elastic.out(1, 0.5)',
-    });
-  }, []);
-
-  const handleAddToCart = (card: typeof cards[0]) => {
+  const addToCart = (card: typeof cards[0]) => {
     setCartItems(prev => {
       const existingItem = prev.find(item => item.id === card.id);
       if (existingItem) {
@@ -61,23 +50,17 @@ export default function Home() {
             : item
         );
       }
-      return [...prev, {
-        id: card.id,
-        title: card.title,
-        price: card.price,
-        quantity: 1,
-        image: card.frontImage
-      }];
+      return [...prev, { ...card, quantity: 1, image: card.frontImage }];
     });
   };
 
-  const handleRemoveFromCart = (id: string) => {
+  const removeFromCart = (id: string) => {
     setCartItems(prev => prev.filter(item => item.id !== id));
   };
 
-  const handleUpdateQuantity = (id: string, quantity: number) => {
+  const updateQuantity = (id: string, quantity: number) => {
     if (quantity === 0) {
-      handleRemoveFromCart(id);
+      removeFromCart(id);
       return;
     }
     setCartItems(prev =>
@@ -87,84 +70,111 @@ export default function Home() {
     );
   };
 
-  const handleCheckout = () => {
-    // Aquí iría la lógica de checkout
-    alert('Proceeding to checkout...');
-  };
-
   return (
-    <main className="min-h-screen bg-gradient-to-br from-red-900 via-red-800 to-red-950">
-      <Cart
-        items={cartItems}
-        onRemoveItem={handleRemoveFromCart}
-        onUpdateQuantity={handleUpdateQuantity}
-        onCheckout={handleCheckout}
-      />
+    <main className="min-h-screen bg-gradient-to-br from-red-900 to-red-800 relative overflow-hidden">
+      {/* Efecto de rayos de fondo */}
+      <div className="absolute inset-0 rays-bg opacity-20" />
+      
+      {/* Header con animación */}
+      <header className="relative z-10 pt-20 pb-10 px-4">
+        <motion.h1 
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", duration: 1 }}
+          className="text-center font-black text-7xl md:text-9xl text-yellow-400 drop-shadow-[0_0_30px_rgba(234,179,8,0.3)] retro-text"
+        >
+          BOMBARDINO
+        </motion.h1>
+        <motion.h1
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", duration: 1, delay: 0.2 }}
+          className="text-center font-black text-7xl md:text-9xl text-yellow-400 drop-shadow-[0_0_30px_rgba(234,179,8,0.3)] retro-text"
+        >
+          COCODRILO
+        </motion.h1>
 
-      {/* Header con efecto holográfico */}
-      <div className="relative overflow-hidden">
+        {/* Historia épica en italiano */}
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-r from-[#00f7ff] via-[#ff00e5] to-[#00f7ff] rounded-full blur-3xl opacity-30"
-        />
-        
-        <div className="container mx-auto px-4 py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="title-animation text-7xl md:text-9xl font-black text-yellow-400 [text-shadow:4px_4px_0_#000] mb-8 transform -rotate-2">
-              BOMBARDINO
-              <br />
-              <span className="inline-block transform translate-x-6">COCODRILO</span>
-            </h1>
-            <p className="title-animation text-3xl text-white font-bold mb-12 italic [text-shadow:2px_2px_0_#000]">
-              MORDE & DISTRUGGE! 🐊💣
-            </p>
-          </motion.div>
-        </div>
-      </div>
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="max-w-4xl mx-auto mt-8 text-center text-xl md:text-2xl text-yellow-100 italic space-y-4"
+        >
+          <p className="font-bold text-3xl md:text-4xl mb-6 text-yellow-300">
+            &ldquo;IL TERRORE DEI CIELI, LA LEGGENDA DEI MARI!&rdquo;
+          </p>
+          <p>
+            Nato da un esperimento militare top-secret, Bombardino è il risultato di un&apos;incredibile fusione tra un coccodrillo preistorico e un bombardiere sperimentale.
+          </p>
+          <p>
+            Con la sua bocca sputa-missili e le sue squame anti-proiettile, questo formidabile rettile volante è diventato il più temuto predatore dei cieli italiani!
+          </p>
+          <p className="text-yellow-300 font-bold mt-6">
+            🎭 COLLEZIONA TUTTE LE CARTE E SCOPRI I SEGRETI DI QUESTA LEGGENDA VIVENTE! 🐊
+          </p>
+        </motion.div>
+      </header>
 
-      {/* Sección de cartas con grid alineado */}
-      <motion.div
+      {/* Sección de cartas con animación */}
+      <section className="relative z-10 py-20 px-4">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="max-w-7xl mx-auto"
+        >
+          <h2 className="text-center font-black text-5xl md:text-6xl text-yellow-400 mb-16 retro-text drop-shadow-[0_0_15px_rgba(234,179,8,0.3)]">
+            COLLEZIONA TUTTA LA SQUADRA!
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            {cards.map((card, index) => (
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 + 1.2 }}
+              >
+                <Card {...card} onAddToCart={() => addToCart(card)} />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Call to action */}
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="container mx-auto px-4 py-16"
+        transition={{ delay: 2 }}
+        className="relative z-10 py-20 px-4 text-center"
       >
-        <h2 className="text-5xl font-black text-yellow-400 text-center mb-16 [text-shadow:3px_3px_0_#000]">
-          COLLEZIONA TUTTA LA SQUADRA!
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 justify-items-center">
-          {cards.map((card, index) => (
-            <motion.div
-              key={card.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 * index }}
-            >
-              <Card {...card} onAddToCart={() => handleAddToCart(card)} />
-            </motion.div>
-          ))}
+        <div className="max-w-4xl mx-auto bg-yellow-400/10 backdrop-blur-sm rounded-3xl p-8 border-4 border-yellow-400/30">
+          <h2 className="text-4xl md:text-5xl font-black text-yellow-400 mb-6 retro-text">
+            DIVENTA PARTE DELLA LEGGENDA!
+          </h2>
+          <p className="text-xl md:text-2xl text-yellow-100 mb-8">
+            Ogni carta racconta una storia epica di battaglie aeree e missioni segrete. 
+            Non perdere l&apos;occasione di possedere un pezzo di questa incredibile avventura!
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-yellow-400 text-red-900 text-2xl font-black py-4 px-8 rounded-xl hover:bg-yellow-300 transition-colors duration-200 shadow-lg"
+          >
+            ACQUISTA ORA! 🐊✈️
+          </motion.button>
         </div>
-      </motion.div>
+      </motion.section>
 
-      {/* Call to Action con efecto de explosión */}
-      <motion.div
-        className="container mx-auto px-4 py-20 text-center"
-      >
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-red-900 text-4xl font-black py-6 px-12 rounded-full [text-shadow:1px_1px_0_#fff] hover:from-yellow-300 hover:to-yellow-400 transform -rotate-2 shadow-xl"
-        >
-          SHOP NOW! 🚀
-        </motion.button>
-      </motion.div>
+      {/* Carrito */}
+      <Cart
+        items={cartItems}
+        onRemoveItem={removeFromCart}
+        onUpdateQuantity={updateQuantity}
+        onCheckout={() => alert('¡Grazie per il tuo acquisto!')}
+      />
     </main>
   );
 }
