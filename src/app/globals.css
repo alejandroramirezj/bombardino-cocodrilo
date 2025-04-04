@@ -1,0 +1,209 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 127, 29, 29;
+  --background-end-rgb: 76, 17, 17;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+  font-family: 'Arial Black', 'Helvetica Black', sans-serif;
+}
+
+/* Efecto de rayos de fondo */
+.rays-bg {
+  background-image: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 0, 0, 0) 0deg 10deg,
+    rgba(255, 255, 0, 0.1) 10deg 20deg
+  );
+  animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Efecto holográfico mejorado */
+.holographic-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    #ff00e5 0%,
+    #00f7ff 25%,
+    #00ff00 50%,
+    #ff00e5 75%,
+    #00f7ff 100%
+  );
+  background-size: 200% 200%;
+  animation: holographic 5s linear infinite;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+@keyframes holographic {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+/* Efecto de plástico */
+.plastic-effect {
+  position: relative;
+}
+
+.plastic-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Efecto de brillo retro */
+.retro-glow {
+  filter: drop-shadow(0 0 5px rgba(255, 238, 0, 0.7))
+         drop-shadow(0 0 10px rgba(255, 238, 0, 0.5))
+         drop-shadow(0 0 15px rgba(255, 238, 0, 0.3));
+}
+
+/* Efecto de texto retro */
+.retro-text {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+}
+
+/* Efecto de perspectiva */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Efecto de blíster */
+.blister-container {
+  position: relative;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.blister-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Efecto de explosión mejorado */
+@keyframes explode {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.explode {
+  animation: explode 0.5s ease-out forwards;
+}
+
+/* Efecto de rugido mejorado */
+@keyframes roar {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.roar {
+  animation: roar 0.5s ease-in-out;
+}
+
+/* Animación holográfica para las cartas */
+@keyframes holographic {
+  0% {
+    opacity: 0.3;
+    background-position: 0% 50%;
+  }
+  50% {
+    opacity: 0.5;
+    background-position: 100% 50%;
+  }
+  100% {
+    opacity: 0.3;
+    background-position: 0% 50%;
+  }
+}
+
+.animate-holographic {
+  animation: holographic 3s ease infinite;
+  background-size: 200% 200%;
+}
