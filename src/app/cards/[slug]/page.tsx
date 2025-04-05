@@ -7,19 +7,20 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const cardsData = {
-  'bombardino-cocodrilo': {
+  'bombardino-cocodrillo': {
     id: "card-1",
-    title: "BOMBARDINO COCODRILO",
+    title: "BOMBARDINO COCCODRILLO",
     price: 49.99,
     frontImage: "/cards/card1-front.png",
     backImage: "/cards/card1-back.png",
-    rarity: "Común",
+    rarity: "Leggendaria",
     stock: 15,
     rating: 4.8,
     reviews: 124,
+    category: "Militare",
     story: `
       Nel profondo dei laboratori militari italiani, nacque una creatura straordinaria: 
-      Bombardino Cocodrilo. Questo formidabile ibrido tra un coccodrillo preistorico e 
+      Bombardino Cocodrillo. Questo formidabile ibrido tra un coccodrillo preistorico e 
       un bombardiere sperimentale è diventato il terrore dei cieli e la leggenda dei mari.
 
       Con le sue squame anti-proiettile e la bocca sputa-missili, Bombardino può volare 
@@ -31,21 +32,22 @@ const cardsData = {
     `
   },
   'tralalero-tralala': {
-    id: "card-4",
+    id: "card-2",
     title: "TRALALERO TRALALA",
     price: 59.99,
-    frontImage: "/cards/card1-front.png",
-    backImage: "/cards/card1-back.png",
+    frontImage: "/cards/card2-front.png",
+    backImage: "/cards/card2-back.png",
     rarity: "Rara",
     stock: 10,
     rating: 4.9,
     reviews: 89,
+    category: "Urbano",
     story: `
       Dalle profondità degli abissi urbani emerge Tralalero Tralala, lo squalo più 
       allegro e stiloso degli oceani! Con le sue quattro zampe calzate di Nike Air Max 
       personalizzate, questo predatore trasforma ogni strada in una pista da ballo.
 
-      Rivale storico di Bombardino Cocodrilo, i loro incontri sono diventati veri e 
+      Rivale storico di Bombardino Cocodrillo, i loro incontri sono diventati veri e 
       propri spettacoli di strada: mentre Bombardino domina i cieli con le sue 
       acrobazie aeree, Tralalero sfreccia per le vie della città eseguendo 
       breakdance e moonwalk impossibili.
@@ -54,6 +56,120 @@ const cardsData = {
       inizia a ballare, persino il suo acerrimo nemico non può fare a meno di 
       unirsi al groove. Le loro epiche battle di danza sono diventate leggendarie, 
       attirando folle di fan da tutto il mondo!
+    `
+  },
+  'lirili-larila': {
+    id: "card-3",
+    title: "LIRILÌ LARILÀ",
+    price: 44.99,
+    frontImage: "/cards/card3-front.png",
+    backImage: "/cards/card3-back.png",
+    rarity: "Comune",
+    stock: 20,
+    rating: 4.5,
+    reviews: 67,
+    category: "Musicale",
+    story: `
+      Un uccello canterino con il corpo di violino e le ali di spartito musicale. 
+      Quando canta, le sue melodie possono trasformare qualsiasi momento triste in 
+      una festa gioiosa.
+    `
+  },
+  'bobritto-bandito': {
+    id: "card-4",
+    title: "BOBRITTO BANDITO",
+    price: 54.99,
+    frontImage: "/cards/card4-front.png",
+    backImage: "/cards/card4-back.png",
+    rarity: "Rara",
+    stock: 12,
+    rating: 4.7,
+    reviews: 93,
+    category: "Criminale",
+    story: `
+      Il più astuto castoro bandito del West! Con il suo poncho e il sombrero, 
+      costruisce dighe-trappola per fermare le diligenze e rubare tutto il legno prezioso.
+    `
+  },
+  'bombombini-gusini': {
+    id: "card-5",
+    title: "BOMBOMBINI GUSINI",
+    price: 64.99,
+    frontImage: "/cards/card5-front.png",
+    backImage: "/cards/card5-back.png",
+    rarity: "Ultra Rara",
+    stock: 8,
+    rating: 4.9,
+    reviews: 45,
+    category: "Culinario",
+    story: `
+      Un pinguino esperto di cucina esplosiva! Nelle sue pentole, miscela ingredienti 
+      che creano piatti letteralmente scoppiettanti. Il suo ristorante è sempre pieno, 
+      ma i clienti devono indossare caschi protettivi!
+    `
+  },
+  'brr-brr-patapim': {
+    id: "card-6",
+    title: "BRR BRR PATAPIM",
+    price: 39.99,
+    frontImage: "/cards/card6-front.png",
+    backImage: "/cards/card6-back.png",
+    rarity: "Comune",
+    stock: 25,
+    rating: 4.3,
+    reviews: 78,
+    category: "Invernale",
+    story: `
+      Un orso polare DJ che mixa beats ghiacciati nelle discoteche dell'Artico. 
+      I suoi ritmi fanno ballare persino gli iceberg!
+    `
+  },
+  'glorbo-fruttodrillo': {
+    id: "card-7",
+    title: "GLORBO FRUTTODRILLO",
+    price: 49.99,
+    frontImage: "/cards/card7-front.png",
+    backImage: "/cards/card7-back.png",
+    rarity: "Rara",
+    stock: 15,
+    rating: 4.6,
+    reviews: 82,
+    category: "Naturale",
+    story: `
+      Metà coccodrillo, metà albero da frutto! I suoi denti sono succosi frutti tropicali 
+      e la sua coda è un ramo carico di banane. È il guardiano delle foreste tropicali.
+    `
+  },
+  'trippi-troppi': {
+    id: "card-8",
+    title: "TRIPPI TROPPI",
+    price: 69.99,
+    frontImage: "/cards/card8-front.png",
+    backImage: "/cards/card8-back.png",
+    rarity: "Mitica",
+    stock: 5,
+    rating: 5.0,
+    reviews: 34,
+    category: "Psichedelico",
+    story: `
+      Un camaleonte arcobaleno che vive in un mondo di colori psichedelici. 
+      Quando cambia colore, trasforma la realtà intorno a sé in un caleidoscopio vivente.
+    `
+  },
+  'zesty-leono': {
+    id: "card-9",
+    title: "ZESTY LEONO",
+    price: 59.99,
+    frontImage: "/cards/card9-front.png",
+    backImage: "/cards/card9-back.png",
+    rarity: "Rara",
+    stock: 13,
+    rating: 4.7,
+    reviews: 56,
+    category: "Culinario",
+    story: `
+      Un leone chef specializzato in piatti piccanti! La sua criniera è fatta di 
+      peperoncini e il suo ruggito può trasformare qualsiasi piatto in una bomba di sapori.
     `
   }
 };

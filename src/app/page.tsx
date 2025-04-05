@@ -6,8 +6,8 @@ import Card from '@/components/Card';
 import Cart from '@/components/Cart';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { StarIcon, ShieldCheckIcon, TruckIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface CartItem {
   id: string;
@@ -17,56 +17,101 @@ interface CartItem {
   image: string;
 }
 
-const cards = [
+const characters = [
   {
-    id: "card-1",
-    title: "BOMBARDINO COCODRILO",
-    price: 49.99,
-    frontImage: "/cards/card1-front.png",
-    backImage: "/cards/card1-back.png",
-    rarity: "Común",
-    stock: 15,
-    rating: 4.8,
-    reviews: 124,
-    slug: "bombardino-cocodrilo"
+    name: 'Bombardino Coccodrillo',
+    description: 'El terror de los cielos, la leyenda de los mares. Un cocodrilo militar experimental con capacidad de vuelo.',
+    type: 'Militare',
+    rarity: 'Leggendaria',
+    slug: 'bombardino-coccodrillo',
+    wikiImage: '/images/bombardino-coccodrillo.webp'
   },
   {
-    id: "card-2",
-    title: "BOMBARDINO COCODRILO - EDIZIONE SPECIALE",
-    price: 69.99,
-    frontImage: "/cards/card1-front.png",
-    backImage: "/cards/card1-back.png",
-    rarity: "Especial",
-    stock: 8,
-    rating: 4.9,
-    reviews: 87,
-    slug: "bombardino-cocodrilo-speciale"
+    name: 'Tralalero Tralala',
+    description: 'El músico callejero más alegre de la ciudad. Sus melodías tienen el poder de hacer bailar hasta a las estatuas.',
+    type: 'Urbano',
+    rarity: 'Rara',
+    slug: 'tralalero-tralala',
+    wikiImage: '/images/tralalero-tralala.webp'
   },
   {
-    id: "card-3",
-    title: "BOMBARDINO COCODRILO - EDIZIONE LIMITATA",
-    price: 89.99,
-    frontImage: "/cards/card1-front.png",
-    backImage: "/cards/card1-back.png",
-    rarity: "Limitada",
-    stock: 3,
-    rating: 5.0,
-    reviews: 42,
-    slug: "bombardino-cocodrilo-limitata"
+    name: 'Lirilì Larilà',
+    description: 'La cantante mística cuya voz puede hipnotizar a cualquiera que la escuche.',
+    type: 'Musicale',
+    rarity: 'Comune',
+    slug: 'lirili-larila',
+    wikiImage: '/images/lirili-larila.webp'
   },
   {
-    id: "card-4",
-    title: "TRALALERO TRALALA",
-    price: 59.99,
-    frontImage: "/cards/card1-front.png",
-    backImage: "/cards/card1-back.png",
-    rarity: "Rara",
-    stock: 10,
-    rating: 4.9,
-    reviews: 89,
-    slug: "tralalero-tralala"
+    name: 'Bobritto Bandito',
+    description: 'El ladrón más astuto del barrio, conocido por sus robos imposibles y su estilo único.',
+    type: 'Criminale',
+    rarity: 'Rara',
+    slug: 'bobritto-bandito',
+    wikiImage: '/images/bobritto-bandito.webp'
+  },
+  {
+    name: 'Bombombini Gusini',
+    description: 'El chef más explosivo de la cocina italiana, sus platos son literalmente bombas de sabor.',
+    type: 'Culinario',
+    rarity: 'Ultra Rara',
+    slug: 'bombombini-gusini',
+    wikiImage: '/images/bombombini-gusini.webp'
+  },
+  {
+    name: 'Brr Brr Patapim',
+    description: 'La criatura del invierno que trae consigo ventiscas y diversión helada.',
+    type: 'Invernale',
+    rarity: 'Comune',
+    slug: 'brr-brr-patapim',
+    wikiImage: '/images/brr-brr-patapim.webp'
+  },
+  {
+    name: 'Glorbo Fruttodrillo',
+    description: 'El guardián de los huertos, mitad fruta mitad cocodrilo, protector de los árboles frutales.',
+    type: 'Naturale',
+    rarity: 'Rara',
+    slug: 'glorbo-fruttodrillo',
+    wikiImage: '/images/glorbo-fruttodrillo.webp'
+  },
+  {
+    name: 'Trippi Troppi',
+    description: 'El maestro de las ilusiones psicodélicas, capaz de crear los espectáculos más alucinantes.',
+    type: 'Psichedelico',
+    rarity: 'Mitica',
+    slug: 'trippi-troppi',
+    wikiImage: '/images/trippi-troppi.webp'
+  },
+  {
+    name: 'Zesty Leono',
+    description: 'El león chef especialista en postres cítricos y dulces explosivos de sabor.',
+    type: 'Culinario',
+    rarity: 'Rara',
+    slug: 'zesty-leono',
+    wikiImage: '/images/zesty-leono.webp'
   }
 ];
+
+const cards = characters.map((char, index) => ({
+  id: (index + 1).toString(),
+  title: char.name,
+  price: char.rarity === 'Leggendaria' ? 299.99 :
+         char.rarity === 'Mitica' ? 249.99 :
+         char.rarity === 'Ultra Rara' ? 199.99 :
+         char.rarity === 'Rara' ? 149.99 :
+         99.99,
+  frontImage: `/cards/${char.slug}/front.jpg`,
+  backImage: `/cards/${char.slug}/back.jpg`,
+  rarity: char.rarity,
+  stock: char.rarity === 'Leggendaria' ? 3 :
+         char.rarity === 'Mitica' ? 5 :
+         char.rarity === 'Ultra Rara' ? 8 :
+         char.rarity === 'Rara' ? 12 :
+         20,
+  rating: 4.5 + (Math.random() * 0.5),
+  reviews: 50 + Math.floor(Math.random() * 100),
+  slug: char.slug
+}));
 
 export default function Home() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -109,7 +154,7 @@ export default function Home() {
       <main className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-violet-900 relative overflow-hidden pt-16">
         <div className="absolute inset-0 rays-bg opacity-10" />
         
-        <section id="home" className="relative z-10 min-h-[calc(100vh-4rem)] flex flex-col lg:flex-row items-center justify-center px-4 py-12 lg:py-0">
+        <section id="hero" className="relative z-10 min-h-[calc(100vh-4rem)] flex flex-col lg:flex-row items-center justify-center px-4 py-12 lg:py-0">
           <div className="lg:w-1/2 lg:pl-12 space-y-8">
             <motion.div
               initial={{ x: -100, opacity: 0 }}
@@ -140,27 +185,59 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <section id="storia" className="relative z-10 py-20 px-4 bg-indigo-900/30">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h2
+        <section className="py-16 bg-gray-100">
+          <div className="container mx-auto px-4">
+            <motion.h2 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-black text-amber-400 mb-8 retro-text"
+              animate={{ opacity: 1, y: 0 }}
+              className="text-4xl font-bold text-center mb-12"
             >
-              LA STORIA
+              Nuestros Personajes
             </motion.h2>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="prose prose-lg prose-invert mx-auto"
-            >
-              <p className="text-xl text-violet-100">
-                Nato da un esperimento militare top-secret, Bombardino è il risultato di un&apos;incredibile fusione tra un coccodrillo preistorico e un bombardiere sperimentale.
-              </p>
-              <p className="text-xl text-violet-100">
-                Con la sua bocca sputa-missili e le sue squame anti-proiettile, questo formidabile rettile volante è diventato il più temuto predatore dei cieli italiani!
-              </p>
-            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {characters.map((character, index) => (
+                <motion.div
+                  key={character.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-lg shadow-lg overflow-hidden"
+                >
+                  <div className="relative h-64">
+                    <Image
+                      src={character.wikiImage}
+                      alt={character.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">{character.name}</h3>
+                    <p className="text-gray-600 mb-4">{character.description}</p>
+                    <div className="flex justify-between items-center">
+                      <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                        character.rarity === 'Leggendaria' ? 'bg-yellow-200 text-yellow-800' :
+                        character.rarity === 'Ultra Rara' ? 'bg-purple-200 text-purple-800' :
+                        character.rarity === 'Mitica' ? 'bg-pink-200 text-pink-800' :
+                        character.rarity === 'Rara' ? 'bg-blue-200 text-blue-800' :
+                        'bg-green-200 text-green-800'
+                      }`}>
+                        {character.rarity}
+                      </span>
+                      <span className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm font-semibold">
+                        {character.type}
+                      </span>
+                    </div>
+                    <Link 
+                      href={`/characters/${character.slug}`}
+                      className="mt-4 inline-block bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors"
+                    >
+                      Ver más
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -171,75 +248,8 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               className="text-center font-black text-5xl md:text-6xl text-amber-400 mb-16 retro-text"
             >
-              COLLEZIONA TUTTA LA SQUADRA!
+              COLLEZIONA LE CARTE!
             </motion.h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-              {cards.map((card, index) => (
-                <motion.div
-                  key={card.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="group"
-                >
-                  <Link href={`/cards/${card.slug}`} className="block relative">
-                    <div className="transform transition-transform group-hover:scale-105">
-                      <Card {...card} onAddToCart={() => addToCart(card)} />
-                    </div>
-                    <div className="absolute inset-0 bg-indigo-900/0 group-hover:bg-indigo-900/20 transition-colors rounded-2xl flex items-center justify-center">
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity text-amber-400 font-bold text-lg">
-                        Ver Historia
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="negozio" className="relative z-10 bg-violet-900/30 backdrop-blur-md py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-center font-black text-5xl md:text-6xl text-amber-400 mb-16 retro-text"
-            >
-              NEGOZIO UFFICIALE
-            </motion.h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {[
-                {
-                  icon: ShieldCheckIcon,
-                  title: "Pagamenti Sicuri",
-                  description: "Transazioni protette al 100%"
-                },
-                {
-                  icon: TruckIcon,
-                  title: "Spedizione Veloce",
-                  description: "Consegna in 24/48 ore"
-                },
-                {
-                  icon: StarIcon,
-                  title: "Qualità Garantita",
-                  description: "Carte autentiche certificate"
-                }
-              ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="bg-indigo-900/40 backdrop-blur-md rounded-xl p-6 text-center hover:bg-indigo-800/40 transition-colors duration-300"
-                >
-                  <feature.icon className="w-12 h-12 text-amber-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-amber-300 mb-2">{feature.title}</h3>
-                  <p className="text-violet-100">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {cards.map((card, index) => (
@@ -248,7 +258,6 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="relative group"
                 >
                   <Card {...card} onAddToCart={() => addToCart(card)} />
                 </motion.div>
