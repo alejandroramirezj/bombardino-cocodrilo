@@ -7,9 +7,9 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const cardsData = {
-  'bombardino-cocodrillo': {
+  'bombardino-crocodillo': {
     id: "card-1",
-    title: "BOMBARDINO COCCODRILLO",
+    title: "BOMBARDINO CROCODILLO",
     price: 49.99,
     frontImage: "/cards/card1-front.png",
     backImage: "/cards/card1-back.png",
@@ -20,7 +20,7 @@ const cardsData = {
     category: "Militare",
     story: `
       Nel profondo dei laboratori militari italiani, nacque una creatura straordinaria: 
-      Bombardino Cocodrillo. Questo formidabile ibrido tra un coccodrillo preistorico e 
+      Bombardino Crocodillo. Questo formidabile ibrido tra un Crocodillo preistorico e 
       un bombardiere sperimentale è diventato il terrore dei cieli e la leggenda dei mari.
 
       Con le sue squame anti-proiettile e la bocca sputa-missili, Bombardino può volare 
@@ -47,7 +47,7 @@ const cardsData = {
       allegro e stiloso degli oceani! Con le sue quattro zampe calzate di Nike Air Max 
       personalizzate, questo predatore trasforma ogni strada in una pista da ballo.
 
-      Rivale storico di Bombardino Cocodrillo, i loro incontri sono diventati veri e 
+      Rivale storico di Bombardino Crocodillo, i loro incontri sono diventati veri e 
       propri spettacoli di strada: mentre Bombardino domina i cieli con le sue 
       acrobazie aeree, Tralalero sfreccia per le vie della città eseguendo 
       breakdance e moonwalk impossibili.
@@ -136,7 +136,7 @@ const cardsData = {
     reviews: 82,
     category: "Naturale",
     story: `
-      Metà coccodrillo, metà albero da frutto! I suoi denti sono succosi frutti tropicali 
+      Metà Crocodillo, metà albero da frutto! I suoi denti sono succosi frutti tropicali 
       e la sua coda è un ramo carico di banane. È il guardiano delle foreste tropicali.
     `
   },
@@ -183,10 +183,10 @@ export default function CardPage() {
     return (
       <>
         <Navbar />
-        <main className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-violet-900 pt-16">
+        <main className="min-h-screen bg-gradient-to-br from-slate-800 via-blue-900 to-indigo-950 pt-16">
           <div className="max-w-4xl mx-auto px-4 py-20 text-center">
-            <h1 className="text-4xl font-bold text-amber-400 mb-4">¡Carta no encontrada!</h1>
-            <p className="text-violet-100">Esta carta no existe en nuestra colección.</p>
+            <h1 className="text-4xl font-bold text-orange-400 mb-4">¡Carta no encontrada!</h1>
+            <p className="text-sky-100">Esta carta no existe en nuestra colección.</p>
           </div>
         </main>
         <Footer />
@@ -197,7 +197,7 @@ export default function CardPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-violet-900 pt-16">
+      <main className="min-h-screen bg-gradient-to-br from-slate-800 via-blue-900 to-indigo-950 pt-16">
         <div className="max-w-7xl mx-auto px-4 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Columna izquierda - Carta */}
@@ -217,18 +217,18 @@ export default function CardPage() {
               transition={{ duration: 0.5 }}
               className="space-y-8"
             >
-              <h1 className="text-5xl font-black text-amber-400 retro-text">
+              <h1 className="text-5xl font-black text-orange-400 retro-text">
                 {cardData.title}
               </h1>
               
               <div className="flex items-center space-x-4">
-                <span className="px-3 py-1 bg-amber-400/20 text-amber-400 rounded-full text-sm font-bold">
+                <span className="px-3 py-1 bg-orange-400/20 text-orange-400 rounded-full text-sm font-bold">
                   {cardData.rarity}
                 </span>
-                <div className="flex items-center text-amber-300">
+                <div className="flex items-center text-orange-300">
                   <span className="text-lg font-bold">{cardData.rating}</span>
                   <span className="mx-1">★</span>
-                  <span className="text-violet-200">({cardData.reviews} reviews)</span>
+                  <span className="text-sky-200">({cardData.reviews} reviews)</span>
                 </div>
               </div>
 
@@ -239,7 +239,7 @@ export default function CardPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 * index }}
-                    className="text-violet-100"
+                    className="text-sky-100"
                   >
                     {paragraph.trim()}
                   </motion.p>
@@ -250,12 +250,12 @@ export default function CardPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="bg-indigo-900/40 backdrop-blur-md rounded-xl p-6"
+                className="bg-slate-800/40 backdrop-blur-md rounded-xl p-6"
               >
-                <h3 className="text-xl font-bold text-amber-400 mb-4">
+                <h3 className="text-xl font-bold text-orange-400 mb-4">
                   Detalles de la Carta
                 </h3>
-                <ul className="space-y-2 text-violet-100">
+                <ul className="space-y-2 text-sky-100">
                   <li>Rareza: {cardData.rarity}</li>
                   <li>Stock disponible: {cardData.stock} unidades</li>
                   <li>Precio: €{cardData.price}</li>

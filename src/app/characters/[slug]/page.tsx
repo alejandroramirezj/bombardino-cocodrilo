@@ -9,11 +9,11 @@ import Footer from '@/components/Footer';
 
 const characters = [
   {
-    name: 'Bombardino Coccodrillo',
-    description: 'El terror de los cielos, la leyenda de los mares. Un cocodrilo militar experimental con capacidad de vuelo.',
-    longDescription: `Nacido de un experimento militar top-secret, Bombardino es el resultado de una increíble fusión entre un cocodrilo prehistórico y un bombardero experimental. Con su boca lanza-misiles y sus escamas antibalas, este formidable reptil volador se ha convertido en el depredador más temido de los cielos italianos.
+    name: 'Bombardino Crocodillo',
+    description: "MAMMA MIA! Il più incredibile crocodillo volante mai creato! Questo magnifico rettile militare può sganciare bombe di energia pura e volare come un jet supersonico! BOOM! 💥",
+    longDescription: `INCREDIBILE! Nato in un laboratorio segreto della Fortezza delle Meraviglie, Bombardino è il risultato di un esperimento PAZZESCO che ha fuso un crocodillo preistorico con un bombardiere sperimentale. 
 
-Sus hazañas son legendarias, desde rescatar gatos atrapados en árboles (aunque a veces los asusta más) hasta defender la ciudad de amenazas aéreas. A pesar de su apariencia feroz, tiene un corazón de oro y una debilidad por los helados de pistacho.`,
+Con la sua bocca lancia-missili e le sue squame antiproiettile, questo formidabile rettile volante è diventato il predatore più temuto dei cieli italiani. Le sue imprese sono leggendarie, dal salvare gatti intrappolati sugli alberi (anche se a volte li spavanta ancora di più) al difendere la città dalle minacce aeree. Nonostante il suo aspetto feroce, ha un cuore d'oro e una debolezza per il gelato al pistacchio. IL SUO SUPER RAGGIO ATOMICO PUÒ DISTRUGGERE MONTAGNE INTERE! 🚀`,
     type: 'Militare',
     rarity: 'Leggendaria',
     stats: {
@@ -28,7 +28,7 @@ Sus hazañas son legendarias, desde rescatar gatos atrapados en árboles (aunque
       'Vuelo Supersónico',
       'Rugido Explosivo'
     ],
-    slug: 'bombardino-coccodrillo'
+    slug: 'bombardino-crocodillo'
   },
   {
     name: 'Tralalero Tralala',
@@ -216,10 +216,11 @@ export default function CharacterPage() {
     return (
       <>
         <Navbar />
-        <main className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-violet-900 relative overflow-hidden pt-16">
+        <main className="min-h-screen bg-gradient-to-br from-slate-800 via-blue-900 to-indigo-950 relative overflow-hidden pt-16">
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-15" />
           <div className="max-w-7xl mx-auto px-4 py-20">
-            <h1 className="text-4xl font-bold text-amber-400">Personaje no encontrado</h1>
-            <Link href="/" className="text-violet-100 hover:text-amber-300 mt-4 inline-block">
+            <h1 className="text-4xl font-bold text-orange-400">Personaje no encontrado</h1>
+            <Link href="/" className="text-sky-100 hover:text-orange-300 mt-4 inline-block">
               Volver al inicio
             </Link>
           </div>
@@ -247,19 +248,20 @@ export default function CharacterPage() {
            20,
     rating: 4.5 + (Math.random() * 0.5),
     reviews: 50 + Math.floor(Math.random() * 100),
-    slug: character.slug
+    slug: character.slug,
+    onAddToCart: () => {}
   };
 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-violet-900 relative overflow-hidden pt-16">
+      <main className="min-h-screen bg-gradient-to-br from-slate-800 via-blue-900 to-indigo-950 relative overflow-hidden pt-16">
         <div className="absolute inset-0 rays-bg opacity-10" />
         
         <div className="max-w-7xl mx-auto px-4 py-20">
           <Link 
             href="/"
-            className="inline-block mb-8 text-amber-300 hover:text-amber-400 transition-colors"
+            className="inline-block mb-8 text-orange-300 hover:text-orange-400 transition-colors"
           >
             ← Volver al inicio
           </Link>
@@ -274,55 +276,55 @@ export default function CharacterPage() {
                 <motion.h1 
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-5xl md:text-6xl font-black text-amber-400 mb-4"
+                  className="text-5xl md:text-6xl font-black text-orange-400 mb-4"
                 >
                   {character.name}
                 </motion.h1>
                 <div className="flex gap-4 mb-6">
-                  <span className="px-3 py-1 bg-indigo-700/50 rounded-full text-amber-300 text-sm">
+                  <span className="px-3 py-1 bg-slate-800/50 rounded-full text-orange-300 text-sm">
                     {character.type}
                   </span>
-                  <span className="px-3 py-1 bg-indigo-700/50 rounded-full text-amber-300 text-sm">
+                  <span className="px-3 py-1 bg-slate-800/50 rounded-full text-orange-300 text-sm">
                     {character.rarity}
                   </span>
                 </div>
-                <p className="text-xl text-violet-100 mb-8">
+                <p className="text-xl text-sky-100 mb-8">
                   {character.description}
                 </p>
               </div>
 
-              <div className="prose prose-invert prose-amber max-w-none">
-                <h2 className="text-2xl font-bold text-amber-300 mb-4">Historia</h2>
-                <div className="text-violet-100 whitespace-pre-wrap">
+              <div className="prose prose-invert prose-orange max-w-none">
+                <h2 className="text-2xl font-bold text-orange-300 mb-4">Historia</h2>
+                <div className="text-sky-100 whitespace-pre-wrap">
                   {character.longDescription}
                 </div>
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-amber-300 mb-4">Estadísticas</h2>
+                <h2 className="text-2xl font-bold text-orange-300 mb-4">Estadísticas</h2>
                 <div className="grid grid-cols-2 gap-4">
                   {Object.entries(character.stats).map(([stat, value]) => (
                     <div 
                       key={stat}
-                      className="bg-indigo-900/40 rounded-lg p-4"
+                      className="bg-slate-800/40 rounded-lg p-4"
                     >
-                      <div className="text-amber-300 capitalize mb-2">{stat}</div>
-                      <div className="h-2 bg-indigo-900/40 rounded-full overflow-hidden">
+                      <div className="text-orange-300 capitalize mb-2">{stat}</div>
+                      <div className="h-2 bg-slate-800/40 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${value}%` }}
                           transition={{ duration: 1, delay: 0.5 }}
-                          className="h-full bg-amber-400"
+                          className="h-full bg-orange-400"
                         />
                       </div>
-                      <div className="text-right text-sm text-violet-100 mt-1">{value}/100</div>
+                      <div className="text-right text-sm text-sky-100 mt-1">{value}/100</div>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-amber-300 mb-4">Habilidades</h2>
+                <h2 className="text-2xl font-bold text-orange-300 mb-4">Habilidades</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {character.abilities.map((ability, index) => (
                     <motion.div
@@ -330,7 +332,7 @@ export default function CharacterPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="bg-indigo-900/40 rounded-lg p-4 text-violet-100"
+                      className="bg-slate-800/40 rounded-lg p-4 text-sky-100"
                     >
                       {ability}
                     </motion.div>
