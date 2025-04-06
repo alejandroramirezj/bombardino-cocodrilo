@@ -30,7 +30,7 @@ const characters = [
     name: "Glorbo Fruttodrillo",
     type: "Anfibio",
     power: 88,
-    image: "/images/bobritto-bandito.webp",
+    image: "/images/glorbo-fruttodrillo.webp",
     description: "Primo de Bombardino. Experto en tácticas de combate y frutas tropicales.",
     allies: ["Bombardino coccodrillo", "Bobritto bandito"],
     rivals: ["Trippi Troppi", "Bombombini Gusini"],
@@ -225,7 +225,7 @@ export default function PersonajePage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="cyber-text text-xl text-cyan-400 animate-pulse">Cargando datos...</div>
+        <div className="cyber-text text-xl text-cyan-400 animate-pulse">Caricamento dati...</div>
       </div>
     );
   }
@@ -233,10 +233,10 @@ export default function PersonajePage() {
   if (!character) {
     return (
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold text-red-500 mb-4">¡Personaje no encontrado!</h1>
-        <p className="text-gray-400 mb-8">El personaje que buscas no existe en el universo Brainrot... todavía.</p>
+        <h1 className="text-3xl font-bold text-red-500 mb-4">Personaggio non trovato!</h1>
+        <p className="text-gray-400 mb-8">Il personaggio che stai cercando non esiste nell&apos;universo Brainrot... per ora.</p>
         <Link href="/" className="cyber-button bg-gradient-to-r from-cyan-600 to-blue-700 px-6 py-3 rounded-md font-bold hover:from-cyan-500 hover:to-blue-600 transition">
-          Volver al inicio
+          Torna alla home
         </Link>
       </div>
     );
@@ -275,7 +275,7 @@ export default function PersonajePage() {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
             </svg>
-            Volver a todos los personajes
+            Torna a tutti i personaggi
           </Link>
           
           <motion.h1 
@@ -322,19 +322,19 @@ export default function PersonajePage() {
                   }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20 flex items-end">
-                  <p className="text-xs text-gray-400 p-2">Haz clic en la imagen para activar poder</p>
+                  <p className="text-xs text-gray-400 p-2">Clicca sull&apos;immagine per attivare il potere</p>
                 </div>
               </div>
               
               <div className="cyber-card bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-lg overflow-hidden">
                 <div className="p-4">
                   <h2 className="text-xl font-bold mb-4 text-cyan-300 border-b border-gray-800 pb-2">
-                    Estadísticas
+                    Statistiche
                   </h2>
                   
                   <div className="space-y-4">
                     <div>
-                      <h3 className="text-sm text-gray-400 mb-1">Poder</h3>
+                      <h3 className="text-sm text-gray-400 mb-1">Potere</h3>
                       <div className="flex items-center gap-2">
                         <div className="w-full bg-gray-800 rounded-full h-2.5">
                           <div 
@@ -355,12 +355,12 @@ export default function PersonajePage() {
                     </div>
                     
                     <div>
-                      <h3 className="text-sm text-gray-400 mb-1">Fecha de nacimiento</h3>
+                      <h3 className="text-sm text-gray-400 mb-1">Data di nascita</h3>
                       <p className="text-white">{character.birthdate}</p>
                     </div>
                     
                     <div>
-                      <h3 className="text-sm text-gray-400 mb-1">Altura</h3>
+                      <h3 className="text-sm text-gray-400 mb-1">Altezza</h3>
                       <p className="text-white">{character.height}</p>
                     </div>
                     
@@ -370,7 +370,7 @@ export default function PersonajePage() {
                     </div>
                     
                     <div>
-                      <h3 className="text-sm text-gray-400 mb-1">Frase característica</h3>
+                      <h3 className="text-sm text-gray-400 mb-1">Frase caratteristica</h3>
                       <p className="text-cyan-300 italic">&quot;{character.catchphrase}&quot;</p>
                     </div>
                   </div>
@@ -390,7 +390,7 @@ export default function PersonajePage() {
               {/* Biografía */}
               <div className="cyber-card bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-lg overflow-hidden p-6">
                 <h2 className="text-2xl font-bold mb-4 text-cyan-300 border-b border-gray-800 pb-2">
-                  Biografía
+                  Biografia
                 </h2>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   {character.bio}
@@ -403,7 +403,7 @@ export default function PersonajePage() {
               {/* Habilidades */}
               <div className="cyber-card bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-lg overflow-hidden p-6">
                 <h2 className="text-2xl font-bold mb-4 text-cyan-300 border-b border-gray-800 pb-2">
-                  Habilidades
+                  Abilità
                 </h2>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {character.abilities.map((ability: string, index: number) => (
@@ -418,11 +418,11 @@ export default function PersonajePage() {
               {/* Relaciones */}
               <div className="cyber-card bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-lg overflow-hidden p-6">
                 <h2 className="text-2xl font-bold mb-4 text-cyan-300 border-b border-gray-800 pb-2">
-                  Relaciones
+                  Relazioni
                 </h2>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-lg font-bold text-green-400 mb-2">Aliados</h3>
+                    <h3 className="text-lg font-bold text-green-400 mb-2">Alleati</h3>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {character.allies.map((ally: string, index: number) => (
                         <li key={index} className="flex items-center bg-green-900/20 rounded-md p-2 border border-green-800/30">
@@ -434,7 +434,7 @@ export default function PersonajePage() {
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-bold text-red-400 mb-2">Rivales</h3>
+                    <h3 className="text-lg font-bold text-red-400 mb-2">Rivali</h3>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {character.rivals.map((rival: string, index: number) => (
                         <li key={index} className="flex items-center bg-red-900/20 rounded-md p-2 border border-red-800/30">
@@ -450,7 +450,7 @@ export default function PersonajePage() {
               {/* Apariciones */}
               <div className="cyber-card bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-lg overflow-hidden p-6">
                 <h2 className="text-2xl font-bold mb-4 text-cyan-300 border-b border-gray-800 pb-2">
-                  Apariciones destacadas
+                  Apparizioni principali
                 </h2>
                 <ul className="space-y-2">
                   {character.appearances.map((appearance: string, index: number) => (

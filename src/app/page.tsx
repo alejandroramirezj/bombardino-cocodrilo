@@ -22,7 +22,7 @@ const characters = [
     name: "Glorbo Fruttodrillo",
     type: "Anfibio",
     power: 88,
-    image: "/images/bobritto-bandito.webp",
+    image: "/images/glorbo-fruttodrillo.webp",
     description: "Primo de Bombardino. Experto en tácticas de combate y frutas tropicales.",
     allies: ["Bombardino coccodrillo", "Bobritto bandito"],
     rivals: ["Trippi Troppi", "Bombombini Gusini"],
@@ -228,14 +228,14 @@ export default function Home() {
               className="mb-8"
             >
               <h1 className="text-5xl md:text-7xl font-black mb-4 glitch-text">
-                <span data-text="BOMBARDINO UNIVERSE">BOMBARDINO UNIVERSE</span>
+                <span data-text="UNIVERSO BOMBARDINO">UNIVERSO BOMBARDINO</span>
               </h1>
               <p className="text-xl md:text-2xl text-cyan-400 font-mono mb-6">
-                El universo del meme italiano más poderoso
+                L&apos;universo del meme italiano più potente
               </p>
               <p className="max-w-3xl mx-auto text-gray-300">
-                Explora el universo de Bombardino Crocodillo y todos los personajes del fenómeno de &quot;Italian Brainrot&quot;. 
-                Vota por tus favoritos y descubre las intrincadas relaciones entre estos iconos de la cultura de internet.
+                Esplora l&apos;universo di Bombardino Coccodrillo e tutti i personaggi del fenomeno &quot;Italian Brainrot&quot;.
+                Vota i tuoi preferiti e scopri le intricate relazioni tra queste icone della cultura di internet.
               </p>
             </motion.div>
 
@@ -280,7 +280,7 @@ export default function Home() {
         <div className="cyber-scroll flex whitespace-nowrap gap-8">
           {Array.from({ length: 10 }).map((_, idx) => (
             <span key={idx} className="text-lg font-mono text-cyan-300 inline-block mx-4">
-              BOMBARDINO CROCODILLO 🐊 ITALIAN BRAINROT 🧠 SKIBIDI TOILET 🚽 GYMBRO GATOR 💪 QUEEN RIZZ 👑
+              BOMBARDINO COCCODRILLO 🐊 GLORBO FRUTTODRILLO 🍍 BOMBOMBINI GUSINI 💣 BRR BRR PATAPIM 🚽 TRIPPI TROPPI 📷 BOBRITTO BANDITO 🦝 TRALALELO TRALALA 🎵 TUNG TUNG TUNG SAHUR 🥁 LA VACA SATURNO SATURNITA 🐄 TRULIMERO TRULICINA 🎹 LIRILÌ LARILÀ 🐦
             </span>
           ))}
         </div>
@@ -295,10 +295,10 @@ export default function Home() {
           className="mb-12 text-center"
         >
           <h2 className="text-4xl font-black mb-6 cyber-heading inline-block">
-            EXPLORAR PERSONAJES
+            ESPLORA PERSONAGGI
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            Descubre todos los personajes del universo de Bombardino Crocodillo. Filtra por tipo o explora todos los personajes épicos.
+            Scopri tutti i personaggi dell&apos;universo di Bombardino Coccodrillo. Filtra per tipo o esplora tutti i personaggi epici.
           </p>
         </motion.div>
 
@@ -430,10 +430,10 @@ export default function Home() {
             className="mb-12 text-center"
           >
             <h2 className="text-4xl font-black mb-6 cyber-heading inline-block">
-              POWER RANKING
+              CLASSIFICA DI POTENZA
             </h2>
             <p className="text-gray-400 max-w-3xl mx-auto">
-              La clasificación definitiva de los personajes más poderosos del universo de Bombardino.
+              La classifica definitiva dei personaggi più potenti dell&apos;universo di Bombardino.
             </p>
           </motion.div>
 
@@ -517,7 +517,7 @@ export default function Home() {
             BRAINROT ITALIANO
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            El fascinante fenómeno de internet que ha conquistado las redes sociales
+            L&apos;affascinante fenomeno di internet che ha conquistato i social media
           </p>
         </motion.div>
 
@@ -576,19 +576,19 @@ export default function Home() {
             className="max-w-2xl mx-auto"
           >
             <h2 className="text-3xl font-black mb-4 glitch-text-alt">
-              <span data-text="ÚNETE AL BRAINROT">ÚNETE AL BRAINROT</span>
+              <span data-text="UNISCITI AL BRAINROT">UNISCITI AL BRAINROT</span>
             </h2>
             <p className="text-gray-300 mb-6">
-              Recibe las últimas actualizaciones sobre Bombardino Crocodillo y el universo del Italian Brainrot
+              Ricevi gli ultimi aggiornamenti su Bombardino Coccodrillo e l&apos;universo dell&apos;Italian Brainrot
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <input
                 type="email"
-                placeholder="Tu email"
+                placeholder="La tua email"
                 className="bg-gray-900 border border-cyan-800 rounded-md px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent"
               />
               <button className="cyber-button bg-gradient-to-r from-cyan-600 to-blue-700 px-6 py-3 rounded-md font-bold hover:from-cyan-500 hover:to-blue-600 transition">
-                Suscribirse
+                Iscriviti
               </button>
             </div>
           </motion.div>
