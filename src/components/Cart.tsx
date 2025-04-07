@@ -86,7 +86,7 @@ export default function Cart({ items, onRemoveItem, onUpdateQuantity, onCheckout
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="w-20 h-20 object-cover rounded-lg"
+                            className="w-20 h-20 object-contain rounded-lg"
                           />
                           <div className="flex-1">
                             <h3 className="font-bold text-gray-900">{item.title}</h3>
