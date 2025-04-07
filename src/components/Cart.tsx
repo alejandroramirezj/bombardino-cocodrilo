@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface CartItem {
   id: string;
@@ -83,11 +84,14 @@ export default function Cart({ items, onRemoveItem, onUpdateQuantity, onCheckout
                           layout
                           className="flex items-center gap-4 mb-4 p-4 bg-gray-50 rounded-lg"
                         >
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="w-20 h-20 object-contain rounded-lg"
-                          />
+                          <div className="relative w-20 h-20">
+                            <Image
+                              src={item.image}
+                              alt={item.title}
+                              fill
+                              className="object-contain rounded-lg"
+                            />
+                          </div>
                           <div className="flex-1">
                             <h3 className="font-bold text-gray-900">{item.title}</h3>
                             <p className="text-gray-600">${item.price}</p>

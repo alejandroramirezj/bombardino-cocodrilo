@@ -6,11 +6,10 @@ interface CardProps {
   frontImage: string;
   backImage: string;
   rarity: string;
-  slug?: string;
   onAddToCart?: () => void;
 }
 
-export default function Card({ title, frontImage, backImage, rarity, slug, onAddToCart }: CardProps) {
+export default function Card({ title, frontImage, backImage, rarity, onAddToCart }: CardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {

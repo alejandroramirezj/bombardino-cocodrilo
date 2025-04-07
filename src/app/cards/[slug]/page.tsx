@@ -6,7 +6,25 @@ import Card from '@/components/Card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const cardsData = {
+type CardData = {
+  id: string;
+  title: string;
+  price: number;
+  frontImage: string;
+  backImage: string;
+  rarity: string;
+  stock: number;
+  rating: number;
+  reviews: number;
+  category: string;
+  story: string;
+}
+
+type CardsDataType = {
+  [key: string]: CardData;
+}
+
+const cardsData: CardsDataType = {
   'bombardino-crocodillo': {
     id: "card-1",
     title: "BOMBARDINO CROCODILLO",
