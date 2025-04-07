@@ -1,16 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const links = [
-    { href: '/personajes', label: 'Characters' },
-    { href: '/ranking', label: 'Ranking' },
-    { href: '/meme', label: 'Brainrot' },
+    { href: '#characters', label: 'Characters' },
+    { href: '#power-ranking', label: 'Ranking' },
+    { href: '#about', label: 'About' },
+    { href: '#brainrot', label: 'Brainrot' },
   ];
 
   return (
@@ -18,22 +18,22 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center hover:opacity-90 transition-all group">
+          <a href="#top" className="flex items-center hover:opacity-90 transition-all group">
             <motion.span 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
               className="text-2xl font-black text-white group-hover:text-cyan-400 transition-colors relative glitch-text-sm"
             >
-              <span data-text="BombardinoUniverse">Bombardino<span className="text-cyan-500 group-hover:text-cyan-300">Universe</span></span>
+              <span data-text="BombardinoUniverso">Bombardino<span className="text-cyan-500 group-hover:text-cyan-300">Universe</span></span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-transparent group-hover:w-full transition-all duration-300"></span>
             </motion.span>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {links.map((link) => (
-              <Link 
+              <a 
                 key={link.label}
                 href={link.href} 
                 className="text-gray-400 hover:text-cyan-400 font-medium py-2 px-1 relative overflow-hidden group cyber-link"
@@ -41,7 +41,7 @@ export default function Navbar() {
                 <span className="relative z-10">{link.label}</span>
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300"></span>
                 <span className="absolute top-0 right-0 w-0 h-0.5 bg-purple-500/50 group-hover:w-full transition-all duration-300 delay-75"></span>
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -75,14 +75,14 @@ export default function Navbar() {
         >
           <nav className="flex flex-col space-y-3">
             {links.map((link) => (
-              <Link
+              <a
                 key={link.label}
                 href={link.href}
                 className="text-gray-300 hover:text-cyan-400 font-medium py-2 pl-2 border-l-2 border-transparent hover:border-cyan-500 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
         </motion.div>

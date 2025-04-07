@@ -6,7 +6,35 @@ import Card from '@/components/Card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const cardsData = {
+// Definimos los tipos para mejorar el tipado
+type CardSlug = 
+  | 'bombardino-crocodillo'
+  | 'tralalero-tralala'
+  | 'lirili-larila'
+  | 'bobritto-bandito'
+  | 'bombombini-gusini'
+  | 'brr-brr-patapim'
+  | 'glorbo-fruttodrillo'
+  | 'trippi-troppi'
+  | 'zesty-leono';
+
+type CardDataType = {
+  [key in CardSlug]: {
+    id: string;
+    title: string;
+    price: number;
+    frontImage: string;
+    backImage: string;
+    rarity: string;
+    stock: number;
+    rating: number;
+    reviews: number;
+    category: string;
+    story: string;
+  }
+}
+
+const cardsData: CardDataType = {
   'bombardino-crocodillo': {
     id: "card-1",
     title: "BOMBARDINO CROCODILLO",
@@ -177,7 +205,9 @@ const cardsData = {
 export default function CardPage() {
   const params = useParams();
   const slug = params.slug as string;
-  const cardData = cardsData[slug];
+  // Verificamos si el slug es una clave válida del objeto cardsData
+  const isValidSlug = (s: string): s is CardSlug => Object.keys(cardsData).includes(s);
+  const cardData = isValidSlug(slug) ? cardsData[slug] : undefined;
 
   if (!cardData) {
     return (

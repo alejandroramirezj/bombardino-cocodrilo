@@ -1,24 +1,22 @@
 'use client';
 
-import Link from 'next/link';
-
 export default function Footer() {
   return (
     <footer className="bg-black bg-opacity-95 border-t border-cyan-800/30 text-gray-300 relative">
-      {/* Scan lines effect */}
+      {/* Efecto de líneas de escaneo */}
       <div className="absolute inset-0 bg-scan-lines pointer-events-none z-10 opacity-50"></div>
       
       <div className="container mx-auto px-4 py-12 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Column 1 - Logo and description */}
+          {/* Columna 1 - Logo y descripción */}
           <div className="md:col-span-1">
-            <Link href="/" className="inline-block mb-4 group">
+            <a href="#top" className="inline-block mb-4 group">
               <span className="text-xl font-black text-white group-hover:text-cyan-400 transition-colors duration-300 glitch-text-sm">
                 <span data-text="BombardinoUniverse">Bombardino<span className="text-cyan-500 group-hover:text-cyan-300">Universe</span></span>
               </span>
-            </Link>
+            </a>
             <p className="text-gray-400 mb-4">
-              The fascinating universe of Italian Brainrot with the most absurd and entertaining characters on the internet.
+              The fascinating universe of Italian Brainrot with the most absurd and funny characters on the internet.
             </p>
             <div className="flex space-x-4">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-400 transition-colors duration-300 cyber-icon">
@@ -34,7 +32,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2 - Explore */}
+          {/* Columna 2 - Explorar */}
           <div>
             <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-4 cyber-heading relative inline-block">
               Explore
@@ -42,27 +40,27 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/personajes" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#characters" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   All Characters
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/ranking" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#power-ranking" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Power Ranking
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/galeria" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#gallery" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Gallery
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3 - Resources */}
+          {/* Columna 3 - Recursos */}
           <div>
             <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-4 cyber-heading relative inline-block">
               Resources
@@ -70,33 +68,33 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/faq" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#faq" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   FAQ
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/wiki" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#wiki" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Wiki
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/guia" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#guide" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Universe Guide
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/historia" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#history" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Meme History
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 4 - Community */}
+          {/* Columna 4 - Comunidad */}
           <div>
             <h3 className="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-4 cyber-heading relative inline-block">
               Community
@@ -104,34 +102,34 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/discord" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Discord
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/contribuir" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#contribute" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Contribute
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/terminos" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#terms" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Terms
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/privacidad" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
+                <a href="#privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center group cyber-link-sm">
                   <span className="w-1 h-1 bg-cyan-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                   Privacy
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Derechos de autor */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-center text-gray-500 text-sm">
