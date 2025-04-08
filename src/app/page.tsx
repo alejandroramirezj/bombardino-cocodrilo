@@ -10,6 +10,7 @@ const characters = [
   {
     id: 1,
     name: "Bombardino coccodrillo",
+    slug: "bombardino-coccodrillo",
     type: "Anfibio",
     power: 95,
     image: "/images/Bombardino Crocodillo.webp",
@@ -20,6 +21,7 @@ const characters = [
   {
     id: 2,
     name: "Glorbo Fruttodrillo",
+    slug: "glorbo-fruttodrillo",
     type: "Anfibio",
     power: 88,
     image: "/images/Glorbo Fruttodrillo.webp",
@@ -30,6 +32,7 @@ const characters = [
   {
     id: 3,
     name: "Bombombini Gusini",
+    slug: "bombombini-gusini",
     type: "Anfibio",
     power: 90,
     image: "/images/Bombombini Gusini.webp",
@@ -40,6 +43,7 @@ const characters = [
   {
     id: 4,
     name: "Brr brr Patapim",
+    slug: "brr-brr-patapim",
     type: "Bagno",
     power: 82,
     image: "/images/Brr Brr Patapim.webp",
@@ -50,6 +54,7 @@ const characters = [
   {
     id: 5,
     name: "Trippi Troppi",
+    slug: "trippi-troppi",
     type: "Tecnologia",
     power: 91,
     image: "/images/Trippi Troppi.webp",
@@ -60,6 +65,7 @@ const characters = [
   {
     id: 6,
     name: "Bobritto bandito",
+    slug: "bobritto-bandito",
     type: "Ladro",
     power: 89,
     image: "/images/Bobritto Bandito.webp",
@@ -70,6 +76,7 @@ const characters = [
   {
     id: 7,
     name: "Tralalelo Tralala",
+    slug: "tralalelo-tralala",
     type: "Sonoro",
     power: 86,
     image: "/images/Tralalero Tralala.webp",
@@ -80,6 +87,7 @@ const characters = [
   {
     id: 8,
     name: "Tung tung tung sahur",
+    slug: "tung-tung-tung-sahur",
     type: "Indonesiano",
     power: 88,
     image: "/images/Tung Tung Tung.webp",
@@ -90,6 +98,7 @@ const characters = [
   {
     id: 9,
     name: "La vaca saturno saturnita",
+    slug: "la-vaca-saturno-saturnita",
     type: "Galattico",
     power: 97,
     image: "/images/Vaca Saturno Saturnita.webp",
@@ -100,6 +109,7 @@ const characters = [
   {
     id: 10,
     name: "Trulimero Trulicina",
+    slug: "trulimero-trulicina",
     type: "Musicale",
     power: 85,
     image: "/images/Trulimero Trulicina.webp",
@@ -110,6 +120,7 @@ const characters = [
   {
     id: 11,
     name: "Lirilì Larilà",
+    slug: "lirili-larila",
     type: "Aereo",
     power: 83,
     image: "/images/Lirilì Larilà.webp",
@@ -407,7 +418,7 @@ export default function Home() {
                       Vota
                     </button>
                     <a
-                      href={`/personajes/${character.id}`}
+                      href={`/personajes/${character.slug}`}
                       className="cyber-button-alt border border-cyan-600 px-3 py-2 rounded-md text-sm font-bold text-cyan-400 hover:bg-cyan-900/30 transition"
                     >
                       Dettagli
