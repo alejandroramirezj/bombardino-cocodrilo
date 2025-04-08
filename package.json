@@ -21,16 +21,23 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240208.0",
+    "@cloudflare/kv-asset-handler": "^0.3.4",
+    "@cloudflare/workers-types": "^4.20250408.0",
+    "@cloudflare/unenv-preset": "^2.0.2",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "esbuild": "^0.17.19",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
+    "miniflare": "^3.20250310.2",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wrangler": "^3.34.2"
+    "unenv": "^2.0.0-rc.14",
+    "wrangler": "^3.114.4"
   }
 }
