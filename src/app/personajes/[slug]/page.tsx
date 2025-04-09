@@ -207,7 +207,7 @@ const characters = [
   }
 ];
 
-export default function PersonajePage() {
+export default function CharacterPage() {
   const params = useParams();
   const [character, setCharacter] = useState<typeof characters[0] | null>(null);
   const [loading, setLoading] = useState(true);
@@ -215,13 +215,10 @@ export default function PersonajePage() {
 
   useEffect(() => {
     if (params.slug) {
-      // Buscar el personaje por slug
       const foundCharacter = characters.find(c => c.slug === params.slug);
-      
       if (foundCharacter) {
         setCharacter(foundCharacter);
       }
-      
       setLoading(false);
     }
   }, [params.slug]);
