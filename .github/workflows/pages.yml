@@ -5,48 +5,22 @@ on:
     branches:
       - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: Build with Next.js
-        run: |
-          # Modificación temporal para evitar error en rutas dinámicas
-          sed -i 's/output: .export.,/\/\/ output: .export.,/' next.config.js
-          npm run build
-          # Restaurar la configuración original
-          sed -i 's/\/\/ output: .export.,/output: .export.,/' next.config.js
-          mkdir -p out
-          cp -r .next/static out/
-          cp -r public/* out/
-          touch out/.nojekyll
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
+# Añadir permisos para el workflow
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
+jobs:
   deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
+          token: ${{ secrets.GITHUB_TOKEN }} 
