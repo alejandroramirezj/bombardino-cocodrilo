@@ -33,10 +33,25 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: |
+          # Modificar config para evitar error con rutas dinámicas
+          sed -i 's/\/\/ output:/\/\/output:/g' next.config.js
+          npm run build
+          mkdir -p out
+          cp -r public/* out/
+          cp -r .next/static out/_next/
+          touch out/.nojekyll
+          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; URL=bombardino-cocodrilo/"></head><body></body></html>' > out/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: './out'
       - name: Deploy to GitHub Pages
         id: deployment
