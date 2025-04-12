@@ -276,10 +276,10 @@ export default function Home() {
               className="flex flex-wrap justify-center gap-4"
             >
               <Link href="#characters" className="cyber-button bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-md font-bold hover:shadow-lg hover:shadow-cyan-500/50 transition duration-300">
-                Vedi Personaggi
+                Explore Characters
               </Link>
               <Link href="#power-ranking" className="cyber-button-alt border-2 border-cyan-500 text-cyan-400 px-8 py-3 rounded-md font-bold hover:bg-cyan-900/30 transition duration-300">
-                Classifica di Potenza
+                Power Ranking
               </Link>
             </motion.div>
           </div>
@@ -415,13 +415,13 @@ export default function Home() {
                       onClick={() => handleVote(character.id)}
                       className="cyber-button bg-gradient-to-r from-cyan-600 to-blue-700 px-3 py-2 rounded-md text-sm font-bold hover:from-cyan-500 hover:to-blue-600 transition"
                     >
-                      Vota
+                      Vote
                     </button>
                     <a
                       href={`/personajes/${character.slug}`}
                       className="cyber-button-alt border border-cyan-600 px-3 py-2 rounded-md text-sm font-bold text-cyan-400 hover:bg-cyan-900/30 transition"
                     >
-                      Dettagli
+                      Details
                     </a>
                   </div>
                 </div>
@@ -454,10 +454,10 @@ export default function Home() {
                 <thead>
                   <tr className="bg-gradient-to-r from-purple-900/50 to-cyan-900/50 text-left">
                     <th className="py-3 px-4 font-mono text-cyan-300">#</th>
-                    <th className="py-3 px-4 font-mono text-cyan-300">Personaggio</th>
-                    <th className="py-3 px-4 font-mono text-cyan-300">Tipo</th>
-                    <th className="py-3 px-4 font-mono text-cyan-300">Potenza</th>
-                    <th className="py-3 px-4 font-mono text-cyan-300">Voti</th>
+                    <th className="py-3 px-4 font-mono text-cyan-300">Character</th>
+                    <th className="py-3 px-4 font-mono text-cyan-300">Type</th>
+                    <th className="py-3 px-4 font-mono text-cyan-300">Power</th>
+                    <th className="py-3 px-4 font-mono text-cyan-300">Votes</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -601,7 +601,7 @@ export default function Home() {
                 className="bg-gray-900 border border-cyan-800 rounded-md px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:border-transparent"
               />
               <button className="cyber-button bg-gradient-to-r from-cyan-600 to-blue-700 px-6 py-3 rounded-md font-bold hover:from-cyan-500 hover:to-blue-600 transition">
-                Iscriviti
+                Subscribe
               </button>
             </div>
           </motion.div>
