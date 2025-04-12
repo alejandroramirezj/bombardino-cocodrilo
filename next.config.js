@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // output: 'export',  // Comentado para evitar error con rutas dinámicas
   images: {
     unoptimized: true,
   },
