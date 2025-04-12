@@ -5,6 +5,12 @@ on:
     branches:
       - main
 
+# Añadir permisos para el workflow
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
